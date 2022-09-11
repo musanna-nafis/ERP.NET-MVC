@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "ProfileDetails";
+}
+
+<h2>ProfileDetails</h2>
+<html>
+<head>
+    <title>Industryal - ERP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Content/styles.css">
+</head>
+<body>
+
+
+    <div class="container-fluid">
+        <header class="border bg-dark m-0 p-1 fixed-top">
+            <div class="row">
+                <div class="col-9 ">
+                    <h1 class="text-white"><i>ERP</i></h1>
+                </div>
+
+                <div class=" col-lg-3  ">
+                    <ul class="nav justify-content-center ">
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="@Url.Action("Home", "HR_Basic")"><i class="fas fa-home"></i>Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="@Url.Action("ProfileDetails", "HR_Profile")"><i class="fas fa-user"></i>Profile</a></li>
+                        @*<span style="padding-right:7px;"></span>*@
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block mt-2" href="@Url.Action("Logout", "usersActivity")"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    </div>
+    <br><br><br>
+    <h1 class="text-center"><i class="fas fa-user"></i>Profile</h1>
+    <div class="row">
+        <div class="col-2">
+            <nav class=" navbar border-dark w-25">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="@Url.Action("ProfileEdit", "HR_Profile")">Edit Profile</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="@Url.Action("PasswordChange", "HR_Profile")"> Change Password</a></li>
+
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <center>
+        <center> <span style="color:green;">@TempData["Msg"]</span></center>
+        <table class="table table-hover w-75">
+            <tr>
+
+                <td>Name</td>
+                <td>@Model.firstname &nbsp @Model.lastname</td>
+            </tr>
+            <tr>
+                <td>Job position</td>
+                <td>@Model.position</td>
+            </tr>
+
+            <tr>
+                <td>Phone No</td>
+                <td>@Model.phone</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>@Model.email</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>@Model.address</td>
+            </tr>
+        </table>
+    </center>
+    <!-- Footer Starts-->
+    <footer id="main-footer" class="bg-primary text-white mt-5 p-2">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="lead text-center">
+                        Copyright &copy;
+                        <span>2022</span>
+                        ERP
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Ends -->
+
+
+
+</body>
+</html>

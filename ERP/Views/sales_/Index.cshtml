@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div class="dropdown" style="float:left">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Profile
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="/sales_/profile">My profile</a></li>
+        <li><a href="/sales_/viewCustomer">Change Password</a></li>
+        
+    </ul>
+</div>
+
+
+
+<div class="dropdown" style="float:left">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Customer
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="/sales_/createCustomer">Add Customer</a></li>
+        <li><a href="/sales_/viewCustomer">View Customer</a></li>
+        
+    </ul>
+</div>
+
+<div class="dropdown" style="float:left">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Order
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="/sales_/createOrder">New Order</a></li>
+        <li><a href="/sales_/viewOrder">View Order</a></li>
+        
+    </ul>
+</div>
+<a href="/sales_/leaveRequest" class="btn-primary">Request leave</a>
+
+<div style="margin-left:100%">
+    @Html.ActionLink("Logout", "Logout")
+</div>
+<!--<a href="/sales_/createCustomer">Add Customer</a>
+<a href="/sales_/viewCustomer">View Customer</a>-->
+<h2>Index</h2>
+

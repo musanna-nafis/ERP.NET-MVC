@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "createCustomer";
+}
+<h2>createCustomer</h2><a href="/sales_/index" class="btn-primary">Back</a>
+<div>
+    <form action="" method="post">
+        name :<input type="text" name="name" value="">
+        @Html.ValidationMessage("name", new { @class = "text-danger" })<br>
+        email :<input type="text" name="email" value="">
+        @Html.ValidationMessage("email", new { @class = "text-danger" })<br>
+        phone :<input type="text" name="phone" value="">
+        @Html.ValidationMessage("phone", new { @class = "text-danger" })<br>
+        delivery point :<input type="text" name="delivery_point" value="">
+        @Html.ValidationMessage("delivery_point", new { @class = "text-danger" })<br>
+        first purchase :<input type="text" name="first_purchase" value="">
+        @Html.ValidationMessage("first_purchase", new { @class = "text-danger" })<br>
+        type :<input type="text" name="type" value="">
+        @Html.ValidationMessage("type", new { @class = "text-danger" })<br>
+        <input type="submit" value="ADD" class="btn-group-justified">
+
+    </form>
+    </div>
+
+

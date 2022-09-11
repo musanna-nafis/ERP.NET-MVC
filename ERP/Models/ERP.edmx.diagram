@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="afb4703de0ab4df6996a1087cf035eb6" Name="Diagram1">
+        <EntityTypeShape EntityType="ERPModel.Asset" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Bank" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Customer_emails" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Customer" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Employee" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Expens" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Finance_Activities" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Finance_import_histories" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Finance_payment_histories" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Hr_Activites" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Invoice" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Issue" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Leave_requests" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Liability" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Order_products" Width="1.5" PointX="5.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Order" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Organizaton" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.ProductManager_Activities" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Product" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Sales_Activities" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.sysdiagram" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.User" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Warehouse" Width="1.5" PointX="11.75" PointY="12.75" IsExpanded="true" />
+        <AssociationConnector Association="ERPModel.FK_Orders_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPModel.FK_Employees_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPModel.FK_Finance_import_histories_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPModel.FK_Finance_payment_histories_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPModel.FK_Invoices_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPModel.FK_Leave_requests_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPModel.FK_Liabilities_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

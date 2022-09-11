@@ -1,0 +1,35 @@
+﻿
+    @{
+        ViewBag.Title = "viewCustomer";
+    }
+    <br><a href="/sales_/index" class="btn-primary">Home</a>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>PHONE NO</th>
+            <th>DELIVERY POINT</th>
+            <th>FIRST PURCHASE</th>
+            <th>TYPE</th>
+        </tr>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.id</td>
+                <td>@s.name</td>
+                <td>@s.email</td>
+                <td>@s.phone</td>
+                <td>@s.delivery_point</td>
+                <td>@s.first_purchase</td>
+                <td>@s.type</td>
+                <td>
+                    @Html.ActionLink("edit", "customerEdit", new { id = s.id })
+                <td> @Html.ActionLink("delete", "customerDelete", new { id = s.id }) </td>
+            </tr>
+
+        }
+    </table>
+    <h2>viewCustomer</h2>
+

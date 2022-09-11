@@ -1,0 +1,18 @@
+﻿
+    @{
+        ViewBag.Title = "profile";
+    }
+
+    <h2>profile</h2>
+    <a href="/sales_/Index" class="btn-primary">Back</a>
+    <a href="/sales_/updateProfile" class="btn-success">Update Profile</a>
+    <center>
+        
+        <b>First Name </b><input type="text" value="@Model.firstname" readonly class="btn-block"><br>
+        <b>Last Name </b><input type="text" value="@Model.lastname" readonly class="btn-block"><br>
+        <b>Username </b><input type="text" value="@Model.username" readonly class="btn-block"><br>
+        <b>email </b><input type="text" value="@Model.email" readonly class="btn-block"><br>
+        <b>phone </b><input type="text" value="@Model.phone" readonly class="btn-block"><br>
+        <b>address </b><input type="text" value="@Model.username" readonly class="btn-block"><br>
+        <b>position </b><input type="text" value="@Model.position" readonly class="btn-block"><br>
+    </center>

@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+<html>
+<head>
+    <title>Industryal - ERP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="shortcut icon" href="~/Content/Images/industryal-favicon.png">
+    <link rel="stylesheet" type="text/css" href="~/Content/styles.css">
+</head>
+<body>
+    <center>
+        <form action="" method="POST">
+            <table>
+                <tr>
+                    <td align="center" style="padding:20px;">
+                        <div class="card border-success mb3 dropshadow" style="height:350px;width:250px">
+                            <div class="card-header">Signin</div>
+                            <div class="card-body">
+                                <table>
+                                    <tr>
+                                        <td style="padding-bottom:10px;"><input class="form-control" type="email" name="email" value="@(Model != null ? Model.email : "")" placeholder="Email"><span id="err_signin_email" style="color:red;">@Html.ValidationMessage("email", new { @class = "text-danger" })</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="padding-bottom:20px;"><input class="form-control" type="password" name="password" placeholder="Password"><span id="err_signin_pass" style="color:red;"> @Html.ValidationMessage("password", new { @class = "text-danger" })</span></td>
+                                    </tr>
+
+                                </table>
+
+                                <input class="btn btn-success" type="submit" name="login-button" value="Signin">
+                                <span id="err_signin_pass" style="color:red;">@TempData["Msg"]</span>
+                            </div>
+                        </div>
+                    </td>
+
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>

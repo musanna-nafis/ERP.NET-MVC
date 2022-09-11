@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "ProfileInfo";
+}
+<head>
+    <title>Industryal - Finance & Accounting</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Content/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top dropshadow">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <div class="navbar-brand">
+                <h1 class="text-white"><i>ERP</i></h1>
+            </div>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("Home", "FinanceManager_basic")">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("ChangePassword", "FinanceManager_basic")">Change Password</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("UpdateInformantion", "FinanceManager_basic")">Change Informations</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("LeaveApplication", "FinanceManager_basic")">Leave apply</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("Payments", "FinanceManager_Professional")">Payments</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("SendEmail", "FinanceManager_Professional")">Send Mail</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "FinanceManager_Invoice")">Invoice</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "FinanceManager_Budgeting")">Budgeting</a></li>
+            </ul>
+            <div class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="btn btn-outline-info" href="@Url.Action("ProfileInfo", "FinanceManager_basic")" style="color:white;"><i class="fas fa-address-card"></i> Profile</a></li>
+                <span style="padding-right:5px;"></span>
+                <li class="nav-item"><a class="btn btn-outline-danger" href="@Url.Action("Logout", "usersActivity")" style="color:white;"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </div>
+        </div>
+    </nav>
+
+</body>
+<center>
+    <table>
+        <tr>
+            <td style="padding-top:100px;">
+                <div class="card" style="height:600px;width:600px;">
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.firstname &nbsp @Model.lastname</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Username: @Model.username</li>
+                        <li class="list-group-item">Email: @Model.email</li>
+                        <li class="list-group-item">Phone: @Model.phone</li>
+                        <li class="list-group-item">Position: @Model.position</li>
+                        <li class="list-group-item">Address: @Model.address</li>
+                        <li class="list-group-item">Gender: @Model.gender</li>
+                    </ul>
+                </div>
+            </td>
+
+        </tr>
+    </table>
+</center>
+
+
+

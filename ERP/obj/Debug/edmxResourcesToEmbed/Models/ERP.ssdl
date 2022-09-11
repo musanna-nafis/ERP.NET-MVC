@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ERPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Assets">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="amount" Type="float" />
+    <Property Name="manager_id" Type="int" />
+    <Property Name="type" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Banks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="holder_name" Type="varchar" MaxLength="50" />
+    <Property Name="account_no" Type="varchar" MaxLength="50" />
+    <Property Name="balance" Type="float" />
+    <Property Name="manager_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Customer_emails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sent_from" Type="varchar" MaxLength="50" />
+    <Property Name="contents" Type="varchar" MaxLength="2000" />
+    <Property Name="sent_datetime" Type="datetime" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="phone" Type="varchar" MaxLength="50" />
+    <Property Name="delivery_point" Type="varchar" MaxLength="100" />
+    <Property Name="first_purchase" Type="date" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="employee_id" Type="int" />
+    <Property Name="employee_name" Type="varchar" MaxLength="50" />
+    <Property Name="gender" Type="varchar" MaxLength="50" />
+    <Property Name="supervisor" Type="varchar" MaxLength="50" />
+    <Property Name="present_address" Type="varchar" MaxLength="100" />
+    <Property Name="phone" Type="varchar" MaxLength="50" />
+    <Property Name="job_position" Type="varchar" MaxLength="50" />
+    <Property Name="employee_group" Type="varchar" MaxLength="200" />
+    <Property Name="start_time" Type="time" Precision="7" />
+    <Property Name="end_time" Type="time" Precision="7" />
+    <Property Name="hours_worked" Type="int" />
+    <Property Name="employement_start_date" Type="date" />
+  </EntityType>
+  <EntityType Name="Expenses">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="catagory" Type="varchar" MaxLength="50" />
+    <Property Name="amount" Type="float" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+    <Property Name="expense_date" Type="date" />
+  </EntityType>
+  <EntityType Name="Finance_Activities">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+    <Property Name="activity_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Finance_import_histories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date" Type="datetime" />
+    <Property Name="action" Type="varchar" MaxLength="50" />
+    <Property Name="employee_id" Type="int" />
+    <Property Name="file" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Finance_payment_histories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="amount" Type="float" />
+    <Property Name="manager_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Hr_Activites">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="100" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+    <Property Name="activity_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Invoices">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="500" />
+    <Property Name="for_name" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="sales_order_id" Type="int" />
+    <Property Name="total_amount" Type="int" />
+    <Property Name="manager_id" Type="int" />
+    <Property Name="file" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Issues">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="issue_name" Type="varchar" MaxLength="500" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+    <Property Name="issued_by" Type="varchar" MaxLength="50" />
+    <Property Name="issue_time" Type="datetime" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Leave_requests">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="request_description" Type="varchar" MaxLength="50" />
+    <Property Name="start_time" Type="datetime" />
+    <Property Name="end_time" Type="datetime" />
+    <Property Name="request_made" Type="datetime" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="employee_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Liabilities">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="amount" Type="float" />
+    <Property Name="manager_id" Type="int" />
+    <Property Name="type" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Order_products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="order_id" Type="int" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="amount" Type="float" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customer_id" Type="int" Nullable="false" />
+    <Property Name="order_description" Type="varchar" MaxLength="1000" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="order_made" Type="datetime" />
+    <Property Name="total_amount" Type="int" />
+    <Property Name="delivered_on" Type="datetime" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Organizatons">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="phone" Type="varchar" MaxLength="50" />
+    <Property Name="fax" Type="varchar" MaxLength="50" />
+    <Property Name="established" Type="date" />
+  </EntityType>
+  <EntityType Name="ProductManager_Activities">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+    <Property Name="activity_time" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_name" Type="varchar" MaxLength="50" />
+    <Property Name="status_sale" Type="varchar" MaxLength="50" />
+    <Property Name="status_purchase" Type="varchar" MaxLength="50" />
+    <Property Name="product_description" Type="varchar" MaxLength="500" />
+    <Property Name="warehouse_name" Type="varchar" MaxLength="50" />
+    <Property Name="stock" Type="float" />
+    <Property Name="nature" Type="varchar" MaxLength="50" />
+    <Property Name="weight" Type="varchar" MaxLength="50" />
+    <Property Name="weight_unit" Type="varchar" MaxLength="50" />
+    <Property Name="dimention" Type="varchar" MaxLength="50" />
+    <Property Name="dimention_unit" Type="varchar" MaxLength="50" />
+    <Property Name="selling_price" Type="float" />
+    <Property Name="tax" Type="varchar" MaxLength="50" />
+    <Property Name="product_image" Type="varchar" MaxLength="300" />
+    <Property Name="product_condition" Type="varchar" MaxLength="50" />
+    <Property Name="date_added" Type="varchar" MaxLength="50" />
+    <Property Name="last_updated" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sales_Activities">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+    <Property Name="activity_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="profile_pic" Type="varchar" MaxLength="300" />
+    <Property Name="firstname" Type="varchar" MaxLength="50" />
+    <Property Name="lastname" Type="varchar" MaxLength="50" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="dob" Type="date" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="phone" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="varchar" MaxLength="300" />
+    <Property Name="gender" Type="varchar" MaxLength="10" />
+    <Property Name="position" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="user_status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Warehouses">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+    <Property Name="address" Type="varchar" MaxLength="500" />
+    <Property Name="zip_code" Type="int" />
+    <Property Name="city" Type="varchar" MaxLength="50" />
+    <Property Name="country" Type="varchar" MaxLength="50" />
+    <Property Name="phone" Type="varchar" MaxLength="50" />
+    <Property Name="quantity" Type="float" />
+    <Property Name="remaining_quantity" Type="float" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="date_added" Type="varchar" MaxLength="50" />
+    <Property Name="date_updated" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Employees_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Finance_import_histories_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Finance_import_histories" Type="Self.Finance_import_histories" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Finance_import_histories">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Finance_payment_histories_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Finance_payment_histories" Type="Self.Finance_payment_histories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Finance_payment_histories">
+        <PropertyRef Name="manager_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoices_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Invoices">
+        <PropertyRef Name="manager_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Leave_requests_Users1">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Leave_requests" Type="Self.Leave_requests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Leave_requests">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Liabilities_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Liabilities" Type="Self.Liabilities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Liabilities">
+        <PropertyRef Name="manager_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Customers">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ERPModelStoreContainer">
+    <EntitySet Name="Assets" EntityType="Self.Assets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Banks" EntityType="Self.Banks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer_emails" EntityType="Self.Customer_emails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Expenses" EntityType="Self.Expenses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Finance_Activities" EntityType="Self.Finance_Activities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Finance_import_histories" EntityType="Self.Finance_import_histories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Finance_payment_histories" EntityType="Self.Finance_payment_histories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hr_Activites" EntityType="Self.Hr_Activites" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Issues" EntityType="Self.Issues" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Leave_requests" EntityType="Self.Leave_requests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Liabilities" EntityType="Self.Liabilities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order_products" EntityType="Self.Order_products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Organizatons" EntityType="Self.Organizatons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductManager_Activities" EntityType="Self.ProductManager_Activities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_Activities" EntityType="Self.Sales_Activities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Warehouses" EntityType="Self.Warehouses" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Employees_Users" Association="Self.FK_Employees_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Finance_import_histories_Users" Association="Self.FK_Finance_import_histories_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Finance_import_histories" EntitySet="Finance_import_histories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Finance_payment_histories_Users" Association="Self.FK_Finance_payment_histories_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Finance_payment_histories" EntitySet="Finance_payment_histories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoices_Users" Association="Self.FK_Invoices_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Invoices" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Leave_requests_Users1" Association="Self.FK_Leave_requests_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Leave_requests" EntitySet="Leave_requests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Liabilities_Users" Association="Self.FK_Liabilities_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Liabilities" EntitySet="Liabilities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Customers" Association="Self.FK_Orders_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

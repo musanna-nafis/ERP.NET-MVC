@@ -1,0 +1,18 @@
+﻿
+    @{
+        ViewBag.Title = "customerEdit";
+    }
+
+    <h2>customerEdit</h2><a href="/sales_/viewCustomer" class="btn-primary">Back</a>
+    <center>
+    <form action="" method="post">
+        Customer Name <input type="text" name="name" value="@Model.name"><br>
+        Email <input type="text" name="email" value="@Model.email"><br>
+        phone <input type="text" name="phone" value="@Model.phone"><br>
+        Delivery point <input type="text" name="delivery_point" value="@Model.delivery_point"><br>
+        first purchase :<input type="text" name="first_purchase" value="@Model.first_purchase"><br>
+        type :<input type="text" name="type" value="@Model.type"><br>
+        <input type="submit" value="save">
+
+    </form>
+        </center>

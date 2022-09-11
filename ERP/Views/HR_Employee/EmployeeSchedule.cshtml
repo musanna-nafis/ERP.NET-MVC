@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "EmployeeSchedule";
+}
+
+<h2>EmployeeSchedule</h2>
+<html>
+<head>
+    <title>Industryal - ERP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Content/styles.css">
+</head>
+<body>
+
+
+    <div class="container-fluid">
+        <header class="border bg-dark m-0 p-1 fixed-top">
+            <div class="row">
+                <div class="col-9 ">
+                    <h1 class="text-white"><i>ERP</i></h1>
+                </div>
+
+                <div class=" col-lg-3  ">
+                    <ul class="nav justify-content-center ">
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="@Url.Action("Home", "HR_Basic")"><i class="fas fa-home"></i>Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="@Url.Action("ProfileDetails", "HR_Profile")"><i class="fas fa-user"></i>Profile</a></li>
+                        @*<span style="padding-right:7px;"></span>*@
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block mt-2" href="@Url.Action("Logout", "usersActivity")"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    </div>
+    <br><br><br>
+    <div class="row">
+        <div class="col-2">
+            <nav class=" navbar border-dark w-25">
+
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="@Url.Action("UserCreate", "HR_User")">New user</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="@Url.Action("UserList", "HR_User")"> User List</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="@Url.Action("EmployeeCreate", "HR_Employee")"> New Employee</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="@Url.Action("CreateEmployeeGroup", "HR_Employee")">Add group</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="@Url.Action("EmployeeList", "HR_Employee")">Employee List</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="@Url.Action("EmployeeSchedule", "HR_Employee")">Schedules</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="@Url.Action("LeaveRequest", "HR_LeaveRequest")">Leave Request</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="@Url.Action("LeaveRequestList", "HR_LeaveRequest")">Leave Request List</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="@Url.Action("ExpenseReport", "HR_Expense")"> Expense Report</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="@Url.Action("ExpenseList", "HR_Expense")"> Expense  Report List</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="@Url.Action("ExpenseStatistic", "HR_Expense")">Expense Statistic</a></li>
+
+                </ul>
+            </nav>
+        </div>
+
+
+        <div class="col-10">
+            <h3 class="text-center"><i class="fas fa-clock"></i>Employee Schedules</h3>
+
+
+
+
+            <br>
+            <table class="table table-hover ">
+                <th>Employee Id</th>
+                <th>Employee Name</th>
+                <th>Start time(Per Day)</th>
+                <th>End Time(Per Day)</th>
+                <th>Job Position</th>
+                <th>Hour Worked (Per Week)</th>
+                <th>Employment Start Date</th>
+
+
+
+
+                @foreach (var item in Model)
+                {
+
+
+                    <tr>
+                        <td>@item.employee_id</td>
+                        <td>@item.employee_name</td>
+                        <td>@item.start_time</td>
+                        <td>@item.end_time</td>
+                        <td>@item.job_position</td>
+                        <td>@item.hours_worked</td>
+                        <td>@item.employement_start_date</td>
+
+
+
+                    </tr>
+                }
+
+
+            </table>
+
+
+        </div>
+    </div>
+
+    <!-- Footer Starts-->
+    <footer id="main-footer" class="bg-primary text-white mt-5 p-2">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="lead text-center">
+                        Copyright &copy;
+                        <span>2022</span>
+                        ERP
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Ends -->
+
+
+
+</body>
+</html>
+

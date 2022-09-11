@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "PaymentsChart";
+}
+<head>
+    <title>Industryal - Finance & Accounting</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Content/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top dropshadow">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <div class="navbar-brand">
+                <h1 class="text-white"><i>ERP</i></h1>
+            </div>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("Home", "FinanceManager_basic")">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("ChangePassword", "FinanceManager_basic")">Change Password</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("UpdateInformantion", "FinanceManager_basic")">Change Informations</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("LeaveApplication", "FinanceManager_basic")">Leave apply</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("Payments", "FinanceManager_Professional")">Payments</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("SendEmail", "FinanceManager_Professional")">Send Mail</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "FinanceManager_Invoice")">Invoice</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "FinanceManager_Budgeting")">Budgeting</a></li>
+            </ul>
+            <div class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="btn btn-outline-info" href="@Url.Action("ProfileInfo", "FinanceManager_basic")" style="color:white;"><i class="fas fa-address-card"></i> Profile</a></li>
+                <span style="padding-right:5px;"></span>
+                <li class="nav-item"><a class="btn btn-outline-danger" href="@Url.Action("Logout", "usersActivity")" style="color:white;"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </div>
+        </div>
+    </nav>
+
+</body>
+<div style="padding-top:80px;">
+    <table>
+        <tr>
+            <td align="center" style="padding:20px;">
+                <div class="card border-warning mb3" style="height:600px;width:250px">
+                    <div class="card-header">Payment Options</div>
+                    <div class="card-body">
+                        <table align="left">
+                            <div class="btn-group-vertical">
+                                <a class="btn btn-info text-left" href="@Url.Action("HistoryPayment", "FinanceManager_Professional")"><i class="fas fa-list"></i> Payment History</a>
+                                <a class="btn btn-info text-left" href="@Url.Action("CustomerPayments", "FinanceManager_Professional")"><i class="fas fa-users"></i> Customer Payments</a>
+                                <a class="btn btn-info text-left" href="@Url.Action("SupplierPayments", "FinanceManager_Professional")"><i class="fas fa-users"></i> Supplier Payments</a>
+                                <a class="btn btn-info text-left" href="@Url.Action("PaymentsChart", "FinanceManager_Professional")"><i class="fas fa-users"></i>Payment Chart</a>
+                            </div>
+                        </table>
+                    </div>
+                </div>
+
+            </td>
+            <td align="center" style="padding:20px;">
+            </td>
+            <td align="center">
+                <div class="card border-warning mb3" style="height:600px;width:1100px">
+                    <div class="card-header">Payment Chart</div>
+                    <div class="card-body">
+                        <div class="col-10">
+                            <div class="border border-dark mr-5 ">
+
+
+                                <center> <div id="piechart" style="width:1000px;height:500px"><div id="myChart" style="width:100%; max-width:600px; height:500px;"></div></center>
+
+                                <center>
+
+
+
+                                    <script>
+
+                        google.charts.load('current', { 'packages': ['corechart'] });
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        function drawChart() {
+                            var data = google.visualization.arrayToDataTable([
+                                ['Contry', 'Mhl'],
+                                ['Debit', @ViewBag.Debit],
+                                ['Credit', @ViewBag.Credit]
+
+                            ]);
+
+                            var options = {
+                                title: 'Percentage of every payments chart',
+                                is3D: true
+                            };
+
+                            var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+                            chart.draw(data, options);
+                        }
+                                    </script>
+
+                                </center>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+</div>
+            </td>
+        </tr>
+    </table>
+</div>

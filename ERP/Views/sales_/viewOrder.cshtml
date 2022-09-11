@@ -1,0 +1,29 @@
+﻿
+    @{
+        ViewBag.Title = "viewOrder";
+
+
+    }
+    <a href="/sales_/index" class="btn-primary">Back</a>
+    <h2>viewOrder</h2>
+
+    <table border="1">
+        <tr>
+            <th>Customer Id</th>
+            <th>Order description</th>
+            <th>Order Time</th>
+            <th>Total amount</th>
+        </tr>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.customer_id</td>
+                <td>@s.order_description</td>
+                <td>@s.order_made</td>
+                <td>@s.total_amount</td>
+                <td>@Html.ActionLink("edit", "orderEdit", new { id = s.id })</td>
+                <td>@Html.ActionLink("delete", "orderDelete", new { id = s.id }) </td>
+            </tr>
+        }
+    </table>
+    <asp:Button id="btnExport" onclick="btnExport_click" runat="server">Export</asp:Button>

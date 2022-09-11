@@ -1,0 +1,16 @@
+﻿
+
+    <h2>updateProfile</h2>
+
+    <center>
+        <form action="" method="post">
+
+            <b>First Name </b><input type="text" name="firstname" value="@Model.firstname" class="btn-block"> @Html.ValidationMessage("firstname", new { @class = "text-danger" })<br>
+            <b>Last Name </b><input type="text" name="lastname" value="@Model.lastname" class="btn-block">@Html.ValidationMessage("lastname", new { @class = "text-danger" })<br>
+            <b>Username </b><input type="text" name="username" value="@Model.username" class="btn-block">@Html.ValidationMessage("username", new { @class = "text-danger" })<br>
+            <b>email </b><input type="text" name="email" value="@Model.email" class="btn-block">@Html.ValidationMessage("email", new { @class = "text-danger" })<br>
+            <b>phone </b><input type="text" name="phone" value="@Model.phone" class="btn-block">@Html.ValidationMessage("phone", new { @class = "text-danger" })<br>
+            <b>address </b><input type="text" name="address" value="@Model.address" class="btn-block">@Html.ValidationMessage("address", new { @class = "text-danger" })<br>
+            <input type="submit" value="Save">
+        </form>
+    </center>

@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "createOrder";
+}
+
+<h2>createOrder</h2><a href="/sales_/index" class="btn-primary">Back</a>
+
+<form action="" method="post">
+    Customer ID <input type="text" name="customer_id"><br>
+    Order Description <textarea name="order_description"></textarea><br>
+    status <select name="status">
+        <option>processing</option>
+        <option>delivered</option>
+    </select><br>
+    Order Time <input type="date" name="order_made"><br>
+    Total Amount<input type="text" name="total_amount"><br>
+    Type<input type="text" name="type"><br>
+    <input type="submit" value="Order"><br>
+</form>

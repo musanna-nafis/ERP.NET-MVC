@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "loginSales";
+}
+
+<h2>loginSales</h2>
+<form action="" method="post">
+    Username<input type="text" name="username" placeholder="username"> @Html.ValidationMessage("username", new { @class = "text-danger" })<br>
+    password<input type="password" name="password" placeholder="password"> @Html.ValidationMessage("password", new { @class = "text-danger" })<br>
+    <input type="submit" value="Login" class="btn-success">
+</form>
